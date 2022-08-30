@@ -19,7 +19,7 @@ let days = [
   "Friday",
   "Suturday",
 ];
-dateElement.innerHTML = `${days[dayIndex]}, ${hours}:${minutes}`;
+dateElement.innerHTML = `${days[dayIndex]} ${hours}:${minutes}`;
 
 function displayWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;

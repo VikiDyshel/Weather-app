@@ -8,6 +8,10 @@ h2 {
     margin: 2%;
 }
 
+p {
+    margin: 2%;
+}
+
 .conteiner {
     border: 2px solid #9da1ac;
     border-radius: 10px;
@@ -19,11 +23,6 @@ h2 {
 
 body {
     background-color: #fdffcd;
-}
-
-p {
-    text-align: center;
-    font-size: 20px;
 }
 
 ul {
