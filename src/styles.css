@@ -11,9 +11,17 @@ p {
     margin-bottom: 0;
 }
 
+p:first-letter {
+    text-transform: capitalize;
+}
+
 footer {
     margin: 2%;
     margin-top: 0;
+}
+
+footer:first-letter {
+    text-transform: capitalize;
 }
 
 .conteiner {
@@ -35,6 +43,11 @@ ul {
 
 li {
     display: inline;
+
+}
+
+li:first-letter {
+    text-transform: capitalize;
 }
 
 .humidity {
@@ -47,7 +60,7 @@ li {
 .wind {
     display: list-item;
     text-align: right;
-    margin-right: -51%;
+    margin-right: -59%;
 }
 
 .icon {
