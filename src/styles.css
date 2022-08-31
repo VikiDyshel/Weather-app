@@ -65,7 +65,7 @@ li:first-letter {
 }
 
 .icon {
-    margin: -6%;
+    margin: -17%;
 }
 
 .weather {
@@ -75,7 +75,13 @@ li:first-letter {
 
 .celsium {
     margin-left: 0%;
-    font-size: 35px;
+    font-size: 15px;
+    display: inline-block;
+    line-height: 35px;
+    margin-top: 5px;
+    padding-left: 0px;
+    vertical-align: top;
+
 }
 
 small {
