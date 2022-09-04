@@ -23,15 +23,15 @@ dateElement.innerHTML = `${days[dayIndex]} ${hours}:${minutes}`;
 
 function displayWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#weather").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  document.querySelector("#weather").innerHTML = Math.round(celsiusTemperature);
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  celsiusTemperature = response.data.main.temp;
+
   document
     .querySelector("#icon")
     .setAttribute(
@@ -52,5 +52,29 @@ function heandleSubmit(event) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", heandleSubmit);
+
+function displayFarenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#weather");
+  celsiusLink.classList.remove("#active");
+  farenheitLink.classList.add("#active");
+  let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(farenheitTemperature);
+}
+
+function displayCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("#active");
+  farenheitLink.classList.remove("#active");
+  let temperatureElement = document.querySelector("#weather");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
+
+let farenheitLink = document.querySelector("#farenheit");
+farenheitLink.addEventListener("click", displayFarenheit);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsius);
 
 search("Kyiv");

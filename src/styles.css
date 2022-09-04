@@ -87,3 +87,13 @@ li:first-letter {
 small {
     margin-left: 5%;
 }
+
+.celsium .active {
+    color: black;
+    text-decoration-line: none;
+    cursor: default;
+}
+
+.celsium .active:hover {
+    text-decoration: none;
+}
