@@ -65,12 +65,13 @@ li:first-letter {
 }
 
 .icon {
-    margin: -17%;
+    margin: -14%;
+    margin-bottom: -5%;
 }
 
 .weather {
-    margin-left: 5%;
-    font-size: 40px;
+    margin-left: 7%;
+    font-size: 60px;
 }
 
 .celsium {
