@@ -21,6 +21,24 @@ let days = [
 ];
 dateElement.innerHTML = `${days[dayIndex]} ${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "j";
+  forecastHTML =
+    forecastHTML +
+    `<div class="row">
+                <div class="col-2">
+                    <div class="weather-date">Mon</div>
+                    <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" width=60 />
+                    <div class="weather-temperature">
+                        <span class="temperature-max">20° </span>
+                        <span class="temperature-min">10° </span>
+                    </div>
+                </div>
+            </div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#weather").innerHTML = Math.round(celsiusTemperature);
@@ -56,16 +74,16 @@ searchForm.addEventListener("submit", heandleSubmit);
 function displayFarenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#weather");
-  celsiusLink.classList.remove("#active");
-  farenheitLink.classList.add("#active");
+  celsiusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
   let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(farenheitTemperature);
 }
 
 function displayCelsius(event) {
   event.preventDefault();
-  celsiusLink.classList.add("#active");
-  farenheitLink.classList.remove("#active");
+  celsiusLink.classList.add("active");
+  farenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#weather");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }

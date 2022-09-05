@@ -98,3 +98,17 @@ small {
 .celsium .active:hover {
     text-decoration: none;
 }
+
+.weather-forecast {
+    margin: 2%;
+}
+
+.weather-date {
+    font-size: 18px;
+    text-align: center;
+}
+
+.weather-temperature {
+    font-size: 15px;
+    text-align: center;
+}
