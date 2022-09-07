@@ -23,21 +23,25 @@ dateElement.innerHTML = `${days[dayIndex]} ${hours}:${minutes}`;
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = "j";
-  forecastHTML =
-    forecastHTML +
-    `<div class="row">
-                <div class="col-2">
-                    <div class="weather-date">Mon</div>
+  
+  let days=["Wed", "Thu", "Fri", "Sut"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) { 
+  forecastHTML = forecastHTML +
+    `<div class="col-2">
+                    <div class="weather-date">${day}</div>
                     <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" width=60 />
                     <div class="weather-temperature">
                         <span class="temperature-max">20° </span>
                         <span class="temperature-min">10° </span>
                     </div>
-                </div>
-            </div>`;
+                </div>`;
+                });
+  forecastHTML = forecastHTML +`</div>`;     
   forecastElement.innerHTML = forecastHTML;
 }
+
 
 function displayWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -89,6 +93,7 @@ function displayCelsius(event) {
 }
 let celsiusTemperature = null;
 
+
 let farenheitLink = document.querySelector("#farenheit");
 farenheitLink.addEventListener("click", displayFarenheit);
 
@@ -96,3 +101,4 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsius);
 
 search("Kyiv");
+displayForecast();
