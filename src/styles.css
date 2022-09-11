@@ -92,6 +92,7 @@ li:first-letter {
 
 small {
     margin-left: 40%;
+
 }
 
 .celsium .active {
@@ -105,9 +106,10 @@ small {
 }
 
 .weather-forecast {
-    margin-bottom: 1%;
-    margin-left: 5%;
+    margin-bottom: 2%;
+    margin-left: 2%;
     margin-top: 0%;
+    text-align: center;
 }
 
 .weather-date {

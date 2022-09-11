@@ -50,7 +50,7 @@ function displayForecast(response) {
                     <div class="weather-date">${formatDay(forecastDay.dt)}</div>
                     <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width=60 />
                     <div class="weather-temperature">
-                        <span class="temperature-max">${Math.round(forecastDay.temp.max)}° </span>
+                        <span class="temperature-max">${Math.round(forecastDay.temp.max)}°| </span>
                         <span class="temperature-min">${Math.round(forecastDay.temp.min)}° </span>
                     </div>
                 </div>`;
