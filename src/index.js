@@ -68,6 +68,7 @@ axios.get(apiUrl).then(displayForecast);
 }
 function displayWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
+  celsiusTemperature = response.data.main.temp;
   document.querySelector("#weather").innerHTML = Math.round(celsiusTemperature);
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
@@ -75,7 +76,7 @@ function displayWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-  celsiusTemperature = response.data.main.temp;
+ 
 
   document
     .querySelector("#icon")
